@@ -28,3 +28,5 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "better_errors", ">= 0.0.8", :group => :development
 gem "binding_of_caller", ">= 0.6.8", :group => :development
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
+gem 'will_paginate'
+#gem "bootstrap-will_paginate"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121211154453) do
+ActiveRecord::Schema.define(:version => 20121211155045) do
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -49,5 +49,12 @@ ActiveRecord::Schema.define(:version => 20121211154453) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
+
+  create_table "verses", :force => true do |t|
+    t.string "gospel"
+    t.string "letters"
+    t.string "psalms_proverbs"
+    t.string "old_test"
+  end
 
 end

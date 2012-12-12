@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Gospel:
+  = @verse.gospel
+%p
+  %b Letters:
+  = @verse.letters
+%p
+  %b Psalms proverbs:
+  = @verse.psalms_proverbs
+%p
+  %b Old test:
+  = @verse.old_test
+
+= link_to 'Edit', edit_verse_path(@verse)
+\|
+= link_to 'Back', verses_path

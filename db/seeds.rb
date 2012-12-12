@@ -5,6 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+require 'active_record/fixtures'
+puts "Loading regular seeds"
+Dir[Rails.root.join("db/seed", "*.{yml,csv}")].each do |file|
+  ActiveRecord::Fixtures.create_fixtures("db/seed", File.basename(file, '.*'))
+end
+
+
 puts 'CREATING ROLES'
 Role.create([
   { :name => 'admin' }, 
@@ -18,3 +26,4 @@ user2 = User.create! :name => 'Second User', :email => 'user2@example.com', :pas
 puts 'New user created: ' << user2.name
 user.add_role :admin
 user2.add_role :VIP
+

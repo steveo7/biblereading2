@@ -1,0 +1,11 @@
+= simple_form_for(@verse) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :gospel
+    = f.input :letters
+    = f.input :psalms_proverbs
+    = f.input :old_test
+
+  .form-actions
+    = f.button :submit

@@ -1,0 +1,25 @@
+%h2 Daily Bible Reading
+
+= will_paginate @verses , previous_label: h("<"), next_label: h(">")
+
+%table.table-striped.table-bordered.table-hover.table-condensed
+  %tr
+    %th #
+    %th Gospels
+    %th Letters
+    %th Wisdom
+    %th Old Testament
+
+  - @verses.each do |verse|
+    %tr
+      %td= verse.id
+      %td= verse.gospel
+      %td= verse.letters
+      %td= verse.psalms_proverbs
+      %td= verse.old_test
+      %td= link_to 'Read', @preaddress + verse.gospel + ';' + verse.letters + ';' + verse.psalms_proverbs + ';' + verse.old_test + @postaddress
+
+= will_paginate @verses , previous_label: h("<"), next_label: h(">")
+
+%br
+
