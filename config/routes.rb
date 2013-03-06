@@ -3,7 +3,7 @@ Biblereading2::Application.routes.draw do
 
 
   authenticated :user do
-    root :to => 'home#index'
+    root :to => "verses#index"
   end
   root :to => "verses#index"
   devise_for :users
