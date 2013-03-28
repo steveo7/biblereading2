@@ -2,18 +2,19 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 gem "rails", "~> 4.0.0.beta1"
 gem 'sqlite3', :group => [:development, :test]
-gem 'pg', :group => [:production]
 
 group :assets do
   gem 'sass-rails',   '>= 4.0.0.beta1'
   gem 'coffee-rails', '>= 4.0.0.beta1'
   gem 'uglifier', '>= 1.0.3'
 end
-
-gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
-gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+group :production do
+  gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+  gem 'pg'
+  gem "thin", ">= 1.5.0"
+end
 gem 'jquery-rails'
-gem "thin", ">= 1.5.0", :group => :production
 gem "haml", ">= 3.1.7"
 gem "haml-rails", ">= 0.3.5", :group => :development
 gem "hpricot", ">= 0.8.6", :group => :development
