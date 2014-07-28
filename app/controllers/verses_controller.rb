@@ -4,7 +4,7 @@ class VersesController < ApplicationController
   def index
     @verses = Verse.order(:id).page(params[:page])
     @preaddress = 'http://www.biblegateway.com/passage/?search='
-    @postaddress = '&version=niv&interface=print'
+    @postaddress = '&version=esv&interface=print'
 
 
     respond_to do |format|
